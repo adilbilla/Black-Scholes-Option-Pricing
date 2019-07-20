@@ -10,10 +10,12 @@
 struct PricingUtil {
 
 	template <typename OptionType>
-	static std::vector<double> mesh_pricer(BlackScholesPricer* option, double (BlackScholesPricer::* function)() const, std::size_t lower_bound, std::size_t upper_bound, std::size_t mesh_size);
+	static std::vector<double> mesh_pricer(BlackScholesPricer* option, double (BlackScholesPricer::* function)() const,
+					       std::size_t lower_bound, std::size_t upper_bound, std::size_t mesh_size);
 
 	template <typename OptionType>
-	static std::vector<double> matrix_pricer(const std::vector<std::vector<double>>& option_parameters, BlackScholesPricer* option, double (BlackScholesPricer::* function)() const);
+	static std::vector<double> matrix_pricer(const std::vector<std::vector<double>>& option_parameters, BlackScholesPricer* option,
+						 double (BlackScholesPricer::* function)() const);
 
 };
 
