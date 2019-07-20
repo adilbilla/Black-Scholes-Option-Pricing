@@ -14,7 +14,8 @@ boost::random::variate_generator<boost::random::mt19937&, boost::random::normal_
 	boost::random::normal_distribution<> normal;
 	StatisticsEngine::MT_Engine.seed(static_cast<boost::uint32_t>(std::time(0)));
 
-	return StatisticsEngine::generate<boost::random::mt19937&, boost::random::normal_distribution<>>(StatisticsEngine::MT_Engine, normal);
+	return StatisticsEngine::generate<boost::random::mt19937&, boost::random::normal_distribution<>>(StatisticsEngine::MT_Engine,
+													 normal);
 }
 
 double StatisticsEngine::Normal_PDF(double x) {
