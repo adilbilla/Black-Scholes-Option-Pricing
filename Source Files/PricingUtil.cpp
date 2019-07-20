@@ -11,7 +11,8 @@
 // utilize member function pointers to make pricing utilities as generic as possible
 
 template <typename OptionType>
-std::vector<double> PricingUtil::mesh_pricer(BlackScholesPricer* option, double (BlackScholesPricer::* function)() const, std::size_t lower_bound, std::size_t upper_bound, std::size_t mesh_size) {
+std::vector<double> PricingUtil::mesh_pricer(BlackScholesPricer* option, double (BlackScholesPricer::* function)() const,
+					     std::size_t lower_bound, std::size_t upper_bound, std::size_t mesh_size) {
 
 	OptionType financial_instrument(*static_cast<OptionType*>(option));
 	std::vector<double> generated_prices;
@@ -28,7 +29,8 @@ std::vector<double> PricingUtil::mesh_pricer(BlackScholesPricer* option, double 
 }
 
 template <typename OptionType>
-std::vector<double> PricingUtil::matrix_pricer(const std::vector<std::vector<double>>& option_parameters, BlackScholesPricer* option, double (BlackScholesPricer::* function)() const) {
+std::vector<double> PricingUtil::matrix_pricer(const std::vector<std::vector<double>>& option_parameters, BlackScholesPricer* option,
+					       double (BlackScholesPricer::* function)() const) {
 
 	OptionType financial_instrument(*static_cast<OptionType*>(option));
 	std::vector<double> generated_function_values;
