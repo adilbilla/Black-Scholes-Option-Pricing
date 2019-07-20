@@ -3,7 +3,6 @@
 
 #include <stdexcept>
 #include <algorithm>
-#include <iostream>
 
 #ifndef PRICING_UTIL_CPP
 #define PRICING_UTIL_CPP
