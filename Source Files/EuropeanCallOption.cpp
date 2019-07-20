@@ -138,7 +138,8 @@ double EuropeanCallOption::Color() const {
 	double q = m_r - m_b;
 	
 	return -std::exp(-q * m_T) * (((StatisticsEngine::Normal_PDF(this->d_one())) / (2 * m_S * m_T * m_sigma * std::sqrt(m_T)))
-		* (2 * q * m_T + 1 + ((((2 * (m_r - q) * m_T - this->d_two() * m_sigma * std::sqrt(m_T)) / (m_sigma * std::sqrt(m_T))) * this->d_one()))));
+		* (2 * q * m_T + 1 + ((((2 * (m_r - q) * m_T - this->d_two() * m_sigma * std::sqrt(m_T)) / (m_sigma * std::sqrt(m_T)))
+				       * this->d_one()))));
 
 }
 
